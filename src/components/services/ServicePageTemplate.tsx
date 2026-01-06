@@ -1,4 +1,5 @@
 import { Section, SectionHeading, Button } from "@/components/ui";
+import Image from "next/image";
 import Link from "next/link";
 import { Service, services } from "@/lib/services-data";
 
@@ -31,6 +32,17 @@ export default function ServicePageTemplate({
           </p>
         </div>
       </Section>
+
+      {/* Featured Image */}
+      <div className="relative h-64 md:h-96 -mt-8">
+        <Image
+          src={service.image}
+          alt={service.imageAlt}
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
+      </div>
 
       {/* Focus Areas Section */}
       <Section background="white" padding="lg">

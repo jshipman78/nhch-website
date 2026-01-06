@@ -8,6 +8,8 @@ export interface Service {
   focusAreas: string[];
   cta: string;
   icon: string;
+  image: string;
+  imageAlt: string;
 }
 
 export const services: Service[] = [
@@ -30,6 +32,8 @@ export const services: Service[] = [
     ],
     cta: "Schedule Your First Session",
     icon: "user",
+    image: "/assets/services/individual-therapy.jpg",
+    imageAlt: "A peaceful figure in contemplation surrounded by nature, representing personal growth and self-reflection",
   },
   {
     slug: "couples-therapy",
@@ -50,6 +54,8 @@ export const services: Service[] = [
     ],
     cta: "Schedule a Couples Session",
     icon: "heart",
+    image: "/assets/services/couples-therapy.jpg",
+    imageAlt: "Two people connecting and holding hands in warm light, representing relationship healing and communication",
   },
   {
     slug: "family-therapy",
@@ -70,6 +76,8 @@ export const services: Service[] = [
     ],
     cta: "Schedule a Family Session",
     icon: "users",
+    image: "/assets/services/family-therapy.jpg",
+    imageAlt: "A family silhouette walking together through golden light, representing unity and support",
   },
   {
     slug: "child-adolescent-therapy",
@@ -90,6 +98,8 @@ export const services: Service[] = [
     ],
     cta: "Schedule an Appointment",
     icon: "smile",
+    image: "/assets/services/child-adolescent-therapy.jpg",
+    imageAlt: "A young person in a nurturing environment with butterflies and plants, representing growth and hope",
   },
   {
     slug: "trauma-ptsd",
@@ -110,6 +120,8 @@ export const services: Service[] = [
     ],
     cta: "Begin Your Healing Journey",
     icon: "shield",
+    image: "/assets/services/trauma-ptsd.jpg",
+    imageAlt: "A figure emerging from darkness into warm golden light, representing healing and recovery from trauma",
   },
   {
     slug: "neurodiversity",
@@ -130,6 +142,8 @@ export const services: Service[] = [
     ],
     cta: "Schedule a Consultation",
     icon: "lightbulb",
+    image: "/assets/services/neurodiversity.jpg",
+    imageAlt: "Abstract watercolor patterns flowing together harmoniously, celebrating unique perspectives and neurodiversity",
   },
   {
     slug: "sex-therapy",
@@ -150,6 +164,8 @@ export const services: Service[] = [
     ],
     cta: "Schedule a Confidential Consultation",
     icon: "heart",
+    image: "/assets/services/sex-therapy.jpg",
+    imageAlt: "Two hands gently touching in soft warm light, representing intimacy, connection, and trust",
   },
 ];
 
