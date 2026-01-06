@@ -1,26 +1,100 @@
 @import "tailwindcss";
 
 :root {
+  /* Brand Colors */
+  --forest: #1B7340;
+  --forest-dark: #155a33;
+  --forest-light: #2a8f52;
+  --gold: #D4A853;
+  --gold-dark: #b8913f;
+  --gold-light: #e0bb6d;
+  --sky: #4A9BD9;
+  --sky-light: #6bb0e3;
+  --sunrise: #F9C74F;
+  --warmgray: #6B6B6B;
+
+  /* Base Colors */
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1a1a1a;
+  --muted: #f5f5f5;
+  --border: #e5e5e5;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-forest: var(--forest);
+  --color-forest-dark: var(--forest-dark);
+  --color-forest-light: var(--forest-light);
+  --color-gold: var(--gold);
+  --color-gold-dark: var(--gold-dark);
+  --color-gold-light: var(--gold-light);
+  --color-sky: var(--sky);
+  --color-sky-light: var(--sky-light);
+  --color-sunrise: var(--sunrise);
+  --color-warmgray: var(--warmgray);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-inter);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Base Styles */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--forest);
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+}
+
+/* Focus States for Accessibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection Color */
+::selection {
+  background-color: var(--gold-light);
+  color: var(--foreground);
 }
