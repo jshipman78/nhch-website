@@ -56,9 +56,15 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-forest text-white">
+    <footer className="bg-forest text-white relative overflow-hidden">
+      {/* Organic background accents */}
+      <div className="absolute inset-0 overflow-hidden opacity-5">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gold rounded-full blur-[100px]" />
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-sky rounded-full blur-[120px]" />
+      </div>
+
       {/* Main Footer Content */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Logo & Tagline */}
           <div className="lg:col-span-1">
@@ -166,23 +172,23 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Insurance Section */}
-        <div className="mt-12 pt-8 border-t border-white/20">
-          <p className="text-center text-sm text-white/70 mb-6">
+        {/* Insurance Section - Enhanced */}
+        <div className="mt-12 pt-8 border-t border-white/10">
+          <p className="text-center text-sm text-white/70 mb-8">
             Many of our providers are credentialed or in-network with the following insurance networks:
           </p>
           <div className="flex flex-wrap justify-center items-center gap-6 lg:gap-8">
             {insuranceLogos.map((insurance) => (
               <div
                 key={insurance.name}
-                className="bg-white rounded-lg p-3 h-12 flex items-center justify-center"
+                className="bg-white/95 rounded-xl p-3.5 h-14 flex items-center justify-center hover:bg-white transition-all duration-300 hover:scale-105 shadow-sm"
               >
                 <Image
                   src={`/assets/insurance/${insurance.file}`}
                   alt={insurance.name}
-                  width={100}
-                  height={40}
-                  className="h-6 w-auto object-contain"
+                  width={110}
+                  height={45}
+                  className="h-7 w-auto object-contain"
                 />
               </div>
             ))}

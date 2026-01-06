@@ -59,21 +59,25 @@ const articles = [
     title: "5 Signs It Might Be Time to Seek Therapy",
     category: "Mental Health Awareness",
     readTime: "5 min read",
+    href: "/media/signs-time-therapy",
   },
   {
     title: "Supporting a Loved One Through Depression",
     category: "Family Support",
     readTime: "7 min read",
+    href: "/media/supporting-depression",
   },
   {
     title: "The Importance of Work-Life Balance for Mental Health",
     category: "Wellness",
     readTime: "4 min read",
+    href: "/media/work-life-balance",
   },
   {
     title: "Navigating Grief: A Compassionate Guide",
     category: "Grief & Loss",
     readTime: "8 min read",
+    href: "/media/navigating-grief",
   },
 ];
 
@@ -198,32 +202,28 @@ export default function MediaPage() {
         <div className="max-w-3xl mx-auto">
           <div className="divide-y divide-border">
             {articles.map((article) => (
-              <div
+              <Link
                 key={article.title}
-                className="py-5 flex items-center justify-between gap-4"
+                href={article.href}
+                className="py-5 flex items-center justify-between gap-4 group hover:bg-muted/30 -mx-4 px-4 rounded-lg transition-colors"
               >
                 <div>
                   <span className="text-xs text-gold font-medium uppercase tracking-wide">
                     {article.category}
                   </span>
-                  <h3 className="text-forest font-semibold mt-1">
+                  <h3 className="text-forest font-semibold mt-1 group-hover:text-forest-dark transition-colors">
                     {article.title}
                   </h3>
                 </div>
-                <div className="text-right flex-shrink-0">
+                <div className="text-right flex-shrink-0 flex items-center gap-3">
                   <span className="text-warmgray text-sm">{article.readTime}</span>
-                  <p className="text-xs text-gold mt-1">Coming Soon</p>
+                  <svg className="w-5 h-5 text-gold group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
-        </div>
-
-        <div className="mt-8 text-center">
-          <p className="text-warmgray text-sm">
-            Articles are currently in development. Check back soon for new
-            content.
-          </p>
         </div>
       </Section>
 

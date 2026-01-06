@@ -20,6 +20,11 @@
   --foreground: #1a1a1a;
   --muted: #f5f5f5;
   --border: #e5e5e5;
+
+  /* Warm neutral tones for depth */
+  --warm-cream: #FAF8F5;
+  --warm-sand: #F5F1EB;
+  --soft-sage: #E8F0ED;
 }
 
 @theme inline {
@@ -39,6 +44,9 @@
   --color-warmgray: var(--warmgray);
   --color-muted: var(--muted);
   --color-border: var(--border);
+  --color-warm-cream: var(--warm-cream);
+  --color-warm-sand: var(--warm-sand);
+  --color-soft-sage: var(--soft-sage);
   --font-serif: var(--font-playfair);
   --font-sans: var(--font-inter);
 }
@@ -51,42 +59,68 @@ body {
   line-height: 1.6;
 }
 
-/* Typography */
+/* Typography - Enhanced hierarchy and expressiveness */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-serif), Georgia, serif;
   font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.025em;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
   color: var(--forest);
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 2.75rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 2.25rem;
+  font-weight: 600;
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.625rem;
+  font-weight: 600;
 }
 
 p {
-  line-height: 1.7;
+  line-height: 1.75;
+}
+
+/* Large display text for emotional impact */
+.text-display {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.045em;
 }
 
 @media (min-width: 768px) {
   h1 {
-    font-size: 3.5rem;
+    font-size: 4rem;
   }
 
   h2 {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 
   h3 {
-    font-size: 1.75rem;
+    font-size: 2rem;
+  }
+
+  .text-display {
+    font-size: 5.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 4.5rem;
+  }
+
+  .text-display {
+    font-size: 6.5rem;
   }
 }
 
@@ -106,4 +140,141 @@ html {
 ::selection {
   background-color: var(--gold-light);
   color: var(--foreground);
+}
+
+/* Signature Visual Elements - Growth Arc and Organic Shapes */
+.growth-arc {
+  position: absolute;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.growth-arc::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  border-radius: 45% 55% 52% 48% / 48% 45% 55% 52%;
+  opacity: 0.08;
+  animation: organic-morph 20s ease-in-out infinite;
+}
+
+@keyframes organic-morph {
+  0%, 100% {
+    border-radius: 45% 55% 52% 48% / 48% 45% 55% 52%;
+    transform: rotate(0deg);
+  }
+  25% {
+    border-radius: 52% 48% 45% 55% / 55% 52% 48% 45%;
+  }
+  50% {
+    border-radius: 48% 52% 55% 45% / 45% 48% 52% 55%;
+    transform: rotate(180deg);
+  }
+  75% {
+    border-radius: 55% 45% 48% 52% / 52% 55% 45% 48%;
+  }
+}
+
+/* Curved divider for section transitions */
+.curved-divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.curved-divider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 80px;
+}
+
+/* Warm texture overlay for approachability */
+.warm-texture {
+  position: relative;
+}
+
+.warm-texture::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* Elevated card with sophisticated shadow */
+.elevated-card {
+  box-shadow:
+    0 1px 3px 0 rgba(27, 115, 64, 0.05),
+    0 10px 15px -3px rgba(27, 115, 64, 0.08),
+    0 4px 6px -2px rgba(244, 196, 48, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.elevated-card:hover {
+  box-shadow:
+    0 4px 6px -1px rgba(27, 115, 64, 0.08),
+    0 20px 25px -5px rgba(27, 115, 64, 0.12),
+    0 10px 10px -5px rgba(244, 196, 48, 0.08);
+  transform: translateY(-4px);
+}
+
+/* Flowing accent line - signature element */
+.flowing-accent {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.flowing-accent::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, var(--gold), var(--sky-light), var(--gold));
+  border-radius: 2px;
+  opacity: 0.4;
+}
+
+/* Asymmetric accent shapes */
+.accent-shape-1 {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: var(--gold);
+  opacity: 0.06;
+  border-radius: 45% 55% 60% 40% / 50% 60% 40% 50%;
+  filter: blur(40px);
+}
+
+.accent-shape-2 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: var(--sky);
+  opacity: 0.05;
+  border-radius: 60% 40% 45% 55% / 40% 50% 50% 60%;
+  filter: blur(50px);
+}
+
+/* Smooth reveal animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
 }

@@ -28,7 +28,7 @@ export default function Header() {
   const [servicesOpen, setServicesOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-border shadow-md">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-border/50 shadow-sm">
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-24 items-center justify-between">
           {/* Logo */}
@@ -96,10 +96,10 @@ export default function Header() {
               </div>
             ))}
 
-            {/* CTA Button */}
+            {/* CTA Button - Enhanced */}
             <Link
               href="#book"
-              className="ml-4 inline-flex items-center px-5 py-2.5 text-sm font-semibold text-white bg-gold hover:bg-gold-dark rounded-lg transition-colors shadow-sm"
+              className="ml-4 inline-flex items-center px-6 py-3 text-sm font-semibold text-forest bg-gold hover:bg-gold-dark rounded-xl transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
             >
               Book Appointment
             </Link>
@@ -178,7 +178,7 @@ export default function Header() {
               <div className="pt-4 px-4">
                 <Link
                   href="#book"
-                  className="block w-full text-center px-5 py-3 text-base font-semibold text-white bg-gold hover:bg-gold-dark rounded-lg transition-colors shadow-sm"
+                  className="block w-full text-center px-5 py-3 text-base font-semibold text-forest bg-gold hover:bg-gold-dark rounded-xl transition-all duration-300 shadow-md"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Book Appointment
