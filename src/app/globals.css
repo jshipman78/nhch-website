@@ -5,9 +5,11 @@
   --forest: #1B7340;
   --forest-dark: #155a33;
   --forest-light: #2a8f52;
-  --gold: #D4A853;
-  --gold-dark: #b8913f;
-  --gold-light: #e0bb6d;
+  --gold: #F4C430;
+  --gold-warm: #E5B342;
+  --gold-rich: #D4A853;
+  --gold-dark: #d4a028;
+  --gold-light: #f7d563;
   --sky: #4A9BD9;
   --sky-light: #6bb0e3;
   --sunrise: #F9C74F;
@@ -27,6 +29,8 @@
   --color-forest-dark: var(--forest-dark);
   --color-forest-light: var(--forest-light);
   --color-gold: var(--gold);
+  --color-gold-warm: var(--gold-warm);
+  --color-gold-rich: var(--gold-rich);
   --color-gold-dark: var(--gold-dark);
   --color-gold-light: var(--gold-light);
   --color-sky: var(--sky);
@@ -52,6 +56,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-serif), Georgia, serif;
   font-weight: 600;
   line-height: 1.2;
+  letter-spacing: -0.025em;
   color: var(--forest);
 }
 
@@ -65,6 +70,10 @@ h2 {
 
 h3 {
   font-size: 1.5rem;
+}
+
+p {
+  line-height: 1.7;
 }
 
 @media (min-width: 768px) {

@@ -12,14 +12,14 @@ const backgrounds = {
   white: "bg-white",
   muted: "bg-muted",
   forest: "bg-forest text-white",
-  gradient: "bg-gradient-to-br from-white via-sunrise/5 to-sky/10",
+  gradient: "bg-gradient-to-br from-white via-gold/5 to-sky/8",
 };
 
 const paddings = {
   none: "",
-  sm: "py-8 lg:py-12",
-  md: "py-12 lg:py-16",
-  lg: "py-16 lg:py-24",
+  sm: "py-8 lg:py-10",
+  md: "py-10 lg:py-14",
+  lg: "py-14 lg:py-20",
 };
 
 export default function Section({
@@ -53,10 +53,10 @@ export function SectionHeading({
   className = "",
 }: SectionHeadingProps) {
   return (
-    <div className={`${centered ? "text-center" : ""} mb-10 lg:mb-12 ${className}`}>
+    <div className={`${centered ? "text-center" : ""} mb-8 lg:mb-10 ${className}`}>
       <h2 className="text-forest mb-4">{title}</h2>
       {subtitle && (
-        <p className="text-warmgray text-lg max-w-2xl mx-auto">{subtitle}</p>
+        <p className="text-warmgray text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed">{subtitle}</p>
       )}
     </div>
   );

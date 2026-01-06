@@ -65,11 +65,11 @@ export default function Footer() {
             <Image
               src="/assets/logos/NHCH_15YR_LOGO.png"
               alt="New Horizons Center for Healing"
-              width={200}
-              height={70}
-              className="h-16 w-auto brightness-0 invert mb-4"
+              width={220}
+              height={110}
+              className="h-18 w-auto brightness-0 invert mb-4"
             />
-            <p className="text-white/80 text-sm leading-relaxed">
+            <p className="text-white/90 text-sm leading-relaxed">
               15 years of trusted, ethical mental health care for individuals, couples, and families.
             </p>
             {/* Social Links */}

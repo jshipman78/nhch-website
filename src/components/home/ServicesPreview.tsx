@@ -72,7 +72,7 @@ const services = [
 
 export default function ServicesPreview() {
   return (
-    <Section background="muted" padding="lg">
+    <Section background="white" padding="lg">
       <SectionHeading
         title="Care Built on Experience, Not Trends"
         subtitle="We believe meaningful healing requires stability, expertise, and human connection—not shortcuts, hype, or sensationalized approaches to mental health."
@@ -83,22 +83,28 @@ export default function ServicesPreview() {
           <Link
             key={service.href}
             href={service.href}
-            className="group bg-white rounded-xl p-6 border border-border hover:shadow-lg hover:border-gold/30 transition-all duration-200"
+            className="group bg-white rounded-xl p-7 border-2 border-border hover:shadow-xl hover:border-gold transition-all duration-300 hover:-translate-y-1"
           >
-            <div className="text-gold mb-4 group-hover:text-gold-dark transition-colors">
+            <div className="w-14 h-14 rounded-lg bg-gold/10 flex items-center justify-center text-gold mb-5 group-hover:bg-gold group-hover:text-white transition-all duration-300">
               {service.icon}
             </div>
-            <h3 className="text-lg font-semibold text-forest mb-2 group-hover:text-forest-dark transition-colors">
+            <h3 className="text-xl font-semibold text-forest mb-3 group-hover:text-forest-dark transition-colors">
               {service.title}
             </h3>
-            <p className="text-warmgray text-sm leading-relaxed">
+            <p className="text-warmgray leading-relaxed">
               {service.description}
             </p>
+            <div className="mt-4 inline-flex items-center text-gold font-medium text-sm group-hover:text-gold-dark transition-colors">
+              Learn more
+              <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
           </Link>
         ))}
       </div>
 
-      <div className="mt-10 text-center">
+      <div className="mt-12 text-center">
         <Button href="/services" variant="secondary" size="lg">
           View All Services
         </Button>

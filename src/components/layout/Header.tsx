@@ -28,17 +28,17 @@ export default function Header() {
   const [servicesOpen, setServicesOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-border shadow-sm">
+    <header className="sticky top-0 z-50 bg-white border-b border-border shadow-md">
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-20 items-center justify-between">
+        <div className="flex h-24 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3">
+          <Link href="/" className="flex items-center gap-3 transition-transform hover:scale-105">
             <Image
               src="/assets/logos/NHCH_15YR_LOGO.png"
               alt="New Horizons Center for Healing"
-              width={180}
-              height={60}
-              className="h-14 w-auto"
+              width={280}
+              height={140}
+              className="h-20 w-auto drop-shadow-sm"
               priority
             />
           </Link>

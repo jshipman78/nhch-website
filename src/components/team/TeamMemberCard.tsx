@@ -19,13 +19,13 @@ export default function TeamMemberCard({
       }`}
     >
       {/* Photo */}
-      <div className="relative aspect-[4/5] overflow-hidden bg-muted">
+      <div className="relative aspect-[3/4] overflow-hidden bg-muted">
         {member.photo ? (
           <Image
             src={member.photo}
             alt={member.name}
             fill
-            className={`object-cover object-top ${
+            className={`object-cover object-[center_25%] ${
               isInactive ? "grayscale" : ""
             }`}
           />
