@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -24,9 +25,16 @@ const navigation = [
 ];
 
 export default function Header() {
+  const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  // Check if we're on the homepage (which has a dark hero)
+  const isHomepage = pathname === "/";
+
+  // On non-homepage routes, always use the scrolled appearance
+  const shouldUseDarkText = !isHomepage || scrolled;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,7 +46,7 @@ export default function Header() {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled
+      shouldUseDarkText
         ? "bg-white/95 backdrop-blur-md shadow-lg"
         : "bg-transparent"
     }`}>
@@ -46,8 +54,10 @@ export default function Header() {
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center transition-transform hover:scale-105">
-            <div className={`px-3 py-1.5 rounded-lg transition-all duration-300 ${
-              scrolled ? "" : "bg-white/95 shadow-md"
+            <div className={`transition-all duration-300 ${
+              shouldUseDarkText
+                ? ""
+                : "drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]"
             }`}>
               <Image
                 src="/assets/logos/NHCH_15YR_LOGO.png"
@@ -73,7 +83,7 @@ export default function Header() {
                     <Link
                       href={item.href}
                       className={`inline-flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors ${
-                        scrolled
+                        shouldUseDarkText
                           ? "text-warmgray hover:text-primary"
                           : "text-white/90 hover:text-white"
                       }`}
@@ -110,7 +120,7 @@ export default function Header() {
                   <Link
                     href={item.href}
                     className={`px-4 py-2 text-sm font-medium transition-colors ${
-                      scrolled
+                      shouldUseDarkText
                         ? "text-warmgray hover:text-primary"
                         : "text-white/90 hover:text-white"
                     }`}
@@ -127,7 +137,7 @@ export default function Header() {
               target="_blank"
               rel="noopener noreferrer"
               className={`ml-4 inline-flex items-center px-6 py-2.5 text-sm font-semibold rounded-full transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105 ${
-                scrolled
+                shouldUseDarkText
                   ? "text-white bg-primary hover:bg-primary-dark"
                   : "text-primary-dark bg-gold hover:bg-gold-light"
               }`}
@@ -140,7 +150,7 @@ export default function Header() {
           <button
             type="button"
             className={`lg:hidden inline-flex items-center justify-center p-2 rounded-md transition-colors ${
-              scrolled
+              shouldUseDarkText
                 ? "text-warmgray hover:text-primary hover:bg-muted"
                 : "text-white hover:text-white/80"
             }`}
