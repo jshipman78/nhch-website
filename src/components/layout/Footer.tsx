@@ -176,21 +176,21 @@ export default function Footer() {
 
         {/* Insurance Section - Enhanced */}
         <div className="mt-12 pt-8 border-t border-white/10">
-          <p className="text-center text-base text-white/80 mb-8">
+          <p className="text-center text-base text-white/80 mb-6">
             In-network with major insurance providers:
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-4 lg:gap-6">
+          <div className="flex flex-wrap justify-center items-center gap-3 lg:gap-4">
             {insuranceLogos.map((insurance) => (
               <div
                 key={insurance.name}
-                className="bg-white rounded-lg px-4 py-3 flex items-center justify-center shadow-sm"
+                className="bg-white rounded px-2 py-1.5 flex items-center justify-center"
               >
                 <Image
                   src={`/assets/insurance/${insurance.file}`}
                   alt={insurance.name}
-                  width={140}
-                  height={56}
-                  className="h-10 w-auto object-contain"
+                  width={160}
+                  height={64}
+                  className="h-12 w-auto object-contain"
                 />
               </div>
             ))}

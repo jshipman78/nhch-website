@@ -1,7 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -25,49 +24,23 @@ const navigation = [
 ];
 
 export default function Header() {
-  const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  // Check if we're on the homepage (which has a dark hero)
-  const isHomepage = pathname === "/";
-
-  // On non-homepage routes, always use the scrolled appearance
-  const shouldUseDarkText = !isHomepage || scrolled;
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      shouldUseDarkText
-        ? "bg-white/95 backdrop-blur-md shadow-lg"
-        : "bg-transparent"
-    }`}>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-20 items-center justify-between">
+        <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center transition-transform hover:scale-105">
-            <div className={`transition-all duration-300 ${
-              shouldUseDarkText
-                ? ""
-                : "drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]"
-            }`}>
-              <Image
-                src="/assets/logos/NHCH_15YR_LOGO.png"
-                alt="New Horizons Center for Healing"
-                width={200}
-                height={80}
-                className="h-12 w-auto"
-                priority
-              />
-            </div>
+            <Image
+              src="/assets/logos/NHCH_15YR_LOGO.png"
+              alt="New Horizons Center for Healing"
+              width={180}
+              height={72}
+              className="h-11 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -82,11 +55,7 @@ export default function Header() {
                   >
                     <Link
                       href={item.href}
-                      className={`inline-flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors ${
-                        shouldUseDarkText
-                          ? "text-warmgray hover:text-primary"
-                          : "text-white/90 hover:text-white"
-                      }`}
+                      className="inline-flex items-center gap-1 px-4 py-2 text-sm font-medium text-warmgray hover:text-primary transition-colors"
                     >
                       {item.name}
                       <svg
@@ -119,11 +88,7 @@ export default function Header() {
                 ) : (
                   <Link
                     href={item.href}
-                    className={`px-4 py-2 text-sm font-medium transition-colors ${
-                      shouldUseDarkText
-                        ? "text-warmgray hover:text-primary"
-                        : "text-white/90 hover:text-white"
-                    }`}
+                    className="px-4 py-2 text-sm font-medium text-warmgray hover:text-primary transition-colors"
                   >
                     {item.name}
                   </Link>
@@ -136,11 +101,7 @@ export default function Header() {
               href="https://www.zocdoc.com"
               target="_blank"
               rel="noopener noreferrer"
-              className={`ml-4 inline-flex items-center px-6 py-2.5 text-sm font-semibold rounded-full transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105 ${
-                shouldUseDarkText
-                  ? "text-white bg-primary hover:bg-primary-dark"
-                  : "text-primary-dark bg-gold hover:bg-gold-light"
-              }`}
+              className="ml-4 inline-flex items-center px-5 py-2 text-sm font-semibold rounded-full text-white bg-primary hover:bg-primary-dark transition-all duration-300 shadow-sm hover:shadow-md"
             >
               Book Appointment
             </Link>
@@ -149,11 +110,7 @@ export default function Header() {
           {/* Mobile menu button */}
           <button
             type="button"
-            className={`lg:hidden inline-flex items-center justify-center p-2 rounded-md transition-colors ${
-              shouldUseDarkText
-                ? "text-warmgray hover:text-primary hover:bg-muted"
-                : "text-white hover:text-white/80"
-            }`}
+            className="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-warmgray hover:text-primary hover:bg-muted transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-expanded={mobileMenuOpen}
             aria-label="Toggle navigation menu"
