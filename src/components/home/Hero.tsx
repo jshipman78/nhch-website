@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import { Button } from "@/components/ui";
+import { BookingButton } from "@/components/booking";
 
 export default function Hero() {
   return (
@@ -51,9 +54,9 @@ export default function Hero() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mb-16">
-            <Button href="https://www.zocdoc.com" external size="lg" className="!bg-gold !text-primary-dark hover:!bg-gold-light !border-gold">
+            <BookingButton variant="gold" size="lg">
               Schedule Your First Session
-            </Button>
+            </BookingButton>
             <Button href="/services" variant="outline" size="lg" className="!border-white !text-white hover:!bg-white hover:!text-primary-dark">
               Explore Our Services
             </Button>

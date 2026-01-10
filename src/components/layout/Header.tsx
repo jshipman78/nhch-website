@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { BookingModal } from "@/components/booking";
 
 const services = [
   { name: "Individual Therapy", href: "/services/individual-therapy" },
@@ -26,6 +27,7 @@ const navigation = [
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [bookingModalOpen, setBookingModalOpen] = useState(false);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
@@ -97,14 +99,12 @@ export default function Header() {
             ))}
 
             {/* CTA Button */}
-            <Link
-              href="https://www.zocdoc.com"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => setBookingModalOpen(true)}
               className="ml-4 inline-flex items-center px-5 py-2 text-sm font-semibold rounded-full text-white bg-primary hover:bg-primary-dark transition-all duration-300 shadow-sm hover:shadow-md"
             >
               Book Appointment
-            </Link>
+            </button>
           </div>
 
           {/* Mobile menu button */}
@@ -178,20 +178,26 @@ export default function Header() {
 
               {/* Mobile CTA */}
               <div className="pt-4 px-4">
-                <Link
-                  href="https://www.zocdoc.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    setBookingModalOpen(true);
+                  }}
                   className="block w-full text-center px-5 py-3 text-base font-semibold text-white bg-primary hover:bg-primary-dark rounded-full transition-all duration-300 shadow-md"
-                  onClick={() => setMobileMenuOpen(false)}
                 >
                   Book Appointment
-                </Link>
+                </button>
               </div>
             </div>
           </div>
         )}
       </nav>
+
+      {/* Booking Modal */}
+      <BookingModal
+        isOpen={bookingModalOpen}
+        onClose={() => setBookingModalOpen(false)}
+      />
     </header>
   );
 }
