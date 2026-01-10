@@ -47,7 +47,7 @@ export default function TeamMemberCard({
 
       {/* Content */}
       <div className="p-3">
-        <h3 className="text-base font-semibold text-primary-dark mb-0.5 leading-tight">{member.name}</h3>
+        <p className="text-sm font-semibold text-primary-dark mb-0.5 leading-tight truncate">{member.name}</p>
         <p className="text-gold text-xs font-medium leading-tight">{member.title}</p>
         {member.supervisor && (
           <p className="text-warmgray text-xs mt-1">

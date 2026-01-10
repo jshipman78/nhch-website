@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 interface ButtonProps {
   children: ReactNode;
   href?: string;
-  variant?: "primary" | "secondary" | "gold" | "ghost" | "outline";
+  variant?: "primary" | "secondary" | "gold" | "ghost" | "outline" | "outline-light";
   size?: "sm" | "md" | "lg";
   className?: string;
   onClick?: () => void;
@@ -24,6 +24,8 @@ const variants = {
     "bg-transparent hover:bg-muted text-primary font-medium transition-colors",
   outline:
     "bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white shadow-sm hover:shadow-lg font-semibold relative overflow-hidden group transition-all duration-300",
+  "outline-light":
+    "bg-transparent border-2 border-white text-white hover:bg-white hover:text-forest-dark shadow-sm hover:shadow-lg font-semibold relative overflow-hidden group transition-all duration-300",
 };
 
 const sizes = {

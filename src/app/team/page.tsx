@@ -96,10 +96,10 @@ export default function TeamPage() {
       </Section>
 
       {/* CTA Section */}
-      <Section background="gradient" padding="lg">
+      <Section background="forest" padding="lg">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-forest mb-4">Ready to Get Started?</h2>
-          <p className="text-warmgray mb-6">
+          <h2 className="text-gold mb-4">Ready to Get Started?</h2>
+          <p className="text-white/90 mb-6">
             Schedule an appointment with one of our experienced clinicians and
             take the first step toward better mental health.
           </p>
@@ -107,7 +107,7 @@ export default function TeamPage() {
             <Button href="https://www.zocdoc.com" external size="lg">
               Schedule Appointment
             </Button>
-            <Button href="/contact" variant="outline" size="lg">
+            <Button href="/contact" variant="outline-light" size="lg">
               Contact Us
             </Button>
           </div>

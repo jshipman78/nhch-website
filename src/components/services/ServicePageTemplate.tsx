@@ -135,12 +135,7 @@ export default function ServicePageTemplate({
             <Button href="https://www.zocdoc.com" external size="lg">
               Schedule an Appointment
             </Button>
-            <Button
-              href="/contact"
-              variant="outline"
-              size="lg"
-              className="border-white text-white hover:bg-white hover:text-forest"
-            >
+            <Button href="/contact" variant="outline-light" size="lg">
               Contact Us
             </Button>
           </div>
