@@ -38,7 +38,7 @@ export default function TeamPage() {
           title="Psychiatrists & Medical Staff"
           subtitle="Our medical team provides psychiatric evaluations, medication management, and comprehensive mental health care."
         />
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
           {psychiatrists.map((member) => (
             <TeamMemberCard key={member.name} member={member} />
           ))}
@@ -51,7 +51,7 @@ export default function TeamPage() {
           title="Therapists & Clinical Staff"
           subtitle="Our licensed therapists offer a range of therapeutic approaches to support your mental health journey."
         />
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
           {therapists.map((member) => (
             <TeamMemberCard key={member.name} member={member} />
           ))}
@@ -64,7 +64,7 @@ export default function TeamPage() {
           title="Not Currently Accepting New Patients"
           subtitle="These clinicians are part of our team but are not currently accepting new patients."
         />
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 max-w-5xl mx-auto">
           {inactiveStaff.map((member) => (
             <TeamMemberCard
               key={member.name}

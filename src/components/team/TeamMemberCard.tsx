@@ -18,20 +18,20 @@ export default function TeamMemberCard({
         isInactive ? "opacity-75" : ""
       }`}
     >
-      {/* Photo */}
-      <div className="relative aspect-[3/4] overflow-hidden bg-muted">
+      {/* Photo - Square headshot format */}
+      <div className="relative aspect-square overflow-hidden bg-muted">
         {member.photo ? (
           <Image
             src={member.photo}
             alt={member.name}
             fill
-            className={`object-cover object-[center_15%] ${
+            className={`object-cover object-top ${
               isInactive ? "grayscale" : ""
             }`}
           />
         ) : (
-          <div className="w-full h-full bg-gradient-to-br from-forest to-forest-dark flex items-center justify-center">
-            <span className="text-4xl font-bold text-white/80">
+          <div className="w-full h-full bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center">
+            <span className="text-3xl font-bold text-white/80">
               {member.initials}
             </span>
           </div>
@@ -46,21 +46,16 @@ export default function TeamMemberCard({
       </div>
 
       {/* Content */}
-      <div className="p-4">
-        <h3 className="text-lg font-semibold text-forest mb-1">{member.name}</h3>
-        <p className="text-gold text-sm font-medium mb-1">{member.title}</p>
+      <div className="p-3">
+        <h3 className="text-base font-semibold text-primary-dark mb-0.5 leading-tight">{member.name}</h3>
+        <p className="text-gold text-xs font-medium leading-tight">{member.title}</p>
         {member.supervisor && (
-          <p className="text-warmgray text-xs mb-2">
+          <p className="text-warmgray text-xs mt-1">
             Supervised by {member.supervisor}
           </p>
         )}
         {member.note && (
-          <p className="text-warmgray text-xs italic mb-2">{member.note}</p>
-        )}
-        {variant === "full" && member.bio && (
-          <p className="text-warmgray text-sm leading-relaxed line-clamp-4 mt-2">
-            {member.bio}
-          </p>
+          <p className="text-warmgray text-xs italic mt-1">{member.note}</p>
         )}
       </div>
     </div>
