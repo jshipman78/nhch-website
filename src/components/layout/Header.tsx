@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -26,19 +26,34 @@ const navigation = [
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-border/50 shadow-sm">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      scrolled
+        ? "bg-white/95 backdrop-blur-md shadow-lg"
+        : "bg-transparent"
+    }`}>
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-24 items-center justify-between">
+        <div className="flex h-20 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 transition-transform hover:scale-105">
+          <Link href="/" className="flex items-center transition-transform hover:scale-105">
             <Image
               src="/assets/logos/NHCH_15YR_LOGO.png"
               alt="New Horizons Center for Healing"
-              width={280}
-              height={140}
-              className="h-20 w-auto drop-shadow-sm"
+              width={200}
+              height={80}
+              className={`h-14 w-auto transition-all duration-300 ${
+                scrolled ? "" : "brightness-0 invert drop-shadow-lg"
+              }`}
               priority
             />
           </Link>
@@ -55,7 +70,11 @@ export default function Header() {
                   >
                     <Link
                       href={item.href}
-                      className="inline-flex items-center gap-1 px-4 py-2 text-sm font-medium text-warmgray hover:text-forest transition-colors"
+                      className={`inline-flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors ${
+                        scrolled
+                          ? "text-warmgray hover:text-primary"
+                          : "text-white/90 hover:text-white"
+                      }`}
                     >
                       {item.name}
                       <svg
@@ -71,12 +90,12 @@ export default function Header() {
                     {/* Services Dropdown */}
                     {servicesOpen && (
                       <div className="absolute left-0 top-full pt-2">
-                        <div className="w-56 rounded-lg bg-white shadow-lg ring-1 ring-black/5 py-2">
+                        <div className="w-56 rounded-xl bg-white shadow-xl ring-1 ring-black/5 py-2">
                           {services.map((service) => (
                             <Link
                               key={service.name}
                               href={service.href}
-                              className="block px-4 py-2 text-sm text-warmgray hover:bg-muted hover:text-forest transition-colors"
+                              className="block px-4 py-2.5 text-sm text-warmgray hover:bg-primary-lighter hover:text-primary transition-colors"
                             >
                               {service.name}
                             </Link>
@@ -88,7 +107,11 @@ export default function Header() {
                 ) : (
                   <Link
                     href={item.href}
-                    className="px-4 py-2 text-sm font-medium text-warmgray hover:text-forest transition-colors"
+                    className={`px-4 py-2 text-sm font-medium transition-colors ${
+                      scrolled
+                        ? "text-warmgray hover:text-primary"
+                        : "text-white/90 hover:text-white"
+                    }`}
                   >
                     {item.name}
                   </Link>
@@ -96,10 +119,16 @@ export default function Header() {
               </div>
             ))}
 
-            {/* CTA Button - Enhanced */}
+            {/* CTA Button */}
             <Link
-              href="#book"
-              className="ml-4 inline-flex items-center px-6 py-3 text-sm font-semibold text-forest bg-gold hover:bg-gold-dark rounded-xl transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
+              href="https://www.zocdoc.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`ml-4 inline-flex items-center px-6 py-2.5 text-sm font-semibold rounded-full transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105 ${
+                scrolled
+                  ? "text-white bg-primary hover:bg-primary-dark"
+                  : "text-primary-dark bg-gold hover:bg-gold-light"
+              }`}
             >
               Book Appointment
             </Link>
@@ -108,7 +137,11 @@ export default function Header() {
           {/* Mobile menu button */}
           <button
             type="button"
-            className="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-warmgray hover:text-forest hover:bg-muted transition-colors"
+            className={`lg:hidden inline-flex items-center justify-center p-2 rounded-md transition-colors ${
+              scrolled
+                ? "text-warmgray hover:text-primary hover:bg-muted"
+                : "text-white hover:text-white/80"
+            }`}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-expanded={mobileMenuOpen}
             aria-label="Toggle navigation menu"
@@ -127,7 +160,7 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-border">
+          <div className="lg:hidden py-4 bg-white rounded-b-2xl shadow-lg">
             <div className="space-y-1">
               {navigation.map((item) => (
                 <div key={item.name}>
@@ -135,7 +168,7 @@ export default function Header() {
                     <>
                       <button
                         onClick={() => setServicesOpen(!servicesOpen)}
-                        className="w-full flex items-center justify-between px-4 py-3 text-base font-medium text-warmgray hover:text-forest hover:bg-muted rounded-lg transition-colors"
+                        className="w-full flex items-center justify-between px-4 py-3 text-base font-medium text-warmgray hover:text-primary hover:bg-primary-lighter rounded-lg transition-colors"
                       >
                         {item.name}
                         <svg
@@ -153,7 +186,7 @@ export default function Header() {
                             <Link
                               key={service.name}
                               href={service.href}
-                              className="block px-4 py-2 text-sm text-warmgray hover:text-forest hover:bg-muted rounded-lg transition-colors"
+                              className="block px-4 py-2 text-sm text-warmgray hover:text-primary hover:bg-primary-lighter rounded-lg transition-colors"
                               onClick={() => setMobileMenuOpen(false)}
                             >
                               {service.name}
@@ -165,7 +198,7 @@ export default function Header() {
                   ) : (
                     <Link
                       href={item.href}
-                      className="block px-4 py-3 text-base font-medium text-warmgray hover:text-forest hover:bg-muted rounded-lg transition-colors"
+                      className="block px-4 py-3 text-base font-medium text-warmgray hover:text-primary hover:bg-primary-lighter rounded-lg transition-colors"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {item.name}
@@ -177,8 +210,10 @@ export default function Header() {
               {/* Mobile CTA */}
               <div className="pt-4 px-4">
                 <Link
-                  href="#book"
-                  className="block w-full text-center px-5 py-3 text-base font-semibold text-forest bg-gold hover:bg-gold-dark rounded-xl transition-all duration-300 shadow-md"
+                  href="https://www.zocdoc.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full text-center px-5 py-3 text-base font-semibold text-white bg-primary hover:bg-primary-dark rounded-full transition-all duration-300 shadow-md"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Book Appointment

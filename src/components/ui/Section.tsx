@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 interface SectionProps {
   children: ReactNode;
   className?: string;
-  background?: "white" | "muted" | "forest" | "gradient";
+  background?: "white" | "muted" | "forest" | "primary" | "gradient";
   padding?: "sm" | "md" | "lg" | "none";
   id?: string;
 }
@@ -12,7 +12,8 @@ const backgrounds = {
   white: "bg-white",
   muted: "bg-muted",
   forest: "bg-forest text-white",
-  gradient: "bg-gradient-to-br from-white via-gold/5 to-sky/8",
+  primary: "bg-primary text-white",
+  gradient: "bg-gradient-to-br from-white via-primary/5 to-gold/8",
 };
 
 const paddings = {

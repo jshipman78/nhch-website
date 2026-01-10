@@ -3,130 +3,86 @@ import { Button } from "@/components/ui";
 
 export default function Hero() {
   return (
-    <section className="relative bg-warm-cream warm-texture overflow-hidden min-h-[85vh] flex items-center">
-      {/* Organic background shapes - distinctive and flowing */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Large organic shape top-right */}
-        <div className="accent-shape-1 -top-32 -right-32" />
-        {/* Flowing shape bottom-left */}
-        <div className="accent-shape-2 -bottom-48 -left-48" />
-
-        {/* Growth arc - signature element representing healing journey */}
-        <div className="growth-arc top-0 right-0 w-[600px] h-[600px]">
-          <div className="absolute inset-0 bg-gradient-to-br from-forest/5 via-sky/5 to-gold/5"
-               style={{ clipPath: 'path("M 0 0 Q 300 150 600 0 L 600 600 L 0 600 Z")' }} />
-        </div>
-
-        {/* Subtle curved accent line */}
-        <svg className="absolute top-20 left-0 w-full h-96 opacity-[0.03]" viewBox="0 0 1200 400" fill="none" preserveAspectRatio="none">
-          <path d="M-100 200 Q 300 50, 600 200 T 1300 200" stroke="currentColor" strokeWidth="3" className="text-forest"/>
-          <path d="M-100 250 Q 350 100, 650 250 T 1300 250" stroke="currentColor" strokeWidth="2" className="text-gold"/>
-        </svg>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Full-bleed background image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/assets/misc/hero-new-horizons.jpg"
+          alt="A path leading toward new horizons at sunrise - representing hope and healing"
+          fill
+          className="object-cover object-center"
+          priority
+          quality={90}
+        />
+        {/* Sophisticated gradient overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          {/* Content - Asymmetric layout for visual interest */}
-          <div className="lg:col-span-7 text-center lg:text-left">
-            {/* Anniversary badge with refined design */}
-            <div className="inline-flex items-center gap-3 mb-8 px-5 py-3 bg-gradient-to-r from-gold/10 via-gold/5 to-transparent border-l-4 border-gold rounded-r-full backdrop-blur-sm">
-              <svg className="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-              </svg>
-              <p className="text-forest font-semibold text-sm tracking-wider">
-                15 YEARS OF TRUSTED CARE
-              </p>
-            </div>
-
-            {/* Dramatic headline with better hierarchy */}
-            <h1 className="text-forest mb-6 max-w-xl mx-auto lg:mx-0">
-              Your Journey to Healing{" "}
-              <span className="relative inline-block">
-                <span className="relative z-10">Starts Here</span>
-                {/* Organic underline accent */}
-                <svg className="absolute -bottom-2 left-0 w-full h-4" viewBox="0 0 300 12" fill="none" preserveAspectRatio="none">
-                  <path d="M0 8 Q 75 2, 150 8 T 300 8" stroke="currentColor" strokeWidth="3" className="text-gold opacity-40" fill="none"/>
-                </svg>
-              </span>
-            </h1>
-
-            <div className="flowing-accent max-w-2xl mx-auto lg:mx-0 mb-10">
-              <p className="text-warmgray text-lg lg:text-xl leading-relaxed mb-6">
-                For fifteen years, New Horizons has been a constant presence in North Texas—offering
-                ethical, clinician-led mental health care grounded in experience, integrity, and genuine human connection.
-              </p>
-              <p className="text-warmgray/90 text-base lg:text-lg leading-relaxed">
-                We believe healing isn&apos;t about quick fixes or trending approaches.
-                It&apos;s about thoughtful, evidence-based care that honors your unique journey.
-              </p>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button href="/services" size="lg">
-                Explore Our Services
-              </Button>
-              <Button href="/team" variant="outline" size="lg">
-                Meet Our Team
-              </Button>
-            </div>
-
-            {/* Trust indicators with refined spacing */}
-            <div className="mt-12 pt-8 border-t border-forest/10 flex flex-wrap justify-center lg:justify-start gap-8">
-              <div className="text-center lg:text-left">
-                <p className="text-forest font-bold text-3xl mb-1">25+</p>
-                <p className="text-warmgray text-sm">Licensed Clinicians</p>
-              </div>
-              <div className="text-center lg:text-left">
-                <p className="text-forest font-bold text-3xl mb-1">6</p>
-                <p className="text-warmgray text-sm">Insurance Networks</p>
-              </div>
-              <div className="text-center lg:text-left">
-                <p className="text-forest font-bold text-3xl mb-1">1000s</p>
-                <p className="text-warmgray text-sm">Lives Transformed</p>
-              </div>
-            </div>
+      {/* Content */}
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+        <div className="max-w-3xl">
+          {/* Anniversary badge */}
+          <div className="inline-flex items-center gap-3 mb-8 px-5 py-2.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-full">
+            <div className="w-2 h-2 bg-gold rounded-full animate-pulse" />
+            <p className="text-white/90 font-medium text-sm tracking-wider uppercase">
+              15 Years of Trusted Care
+            </p>
           </div>
 
-          {/* Image - Asymmetric placement with organic framing */}
-          <div className="relative lg:col-span-5 hidden lg:block">
-            {/* Organic frame shape behind image */}
-            <div className="absolute -inset-6 bg-gradient-to-br from-forest/5 to-sky/10 rounded-[40% 60% 45% 55% / 55% 45% 60% 40%] transform rotate-3" />
+          {/* Headline */}
+          <h1 className="!text-white text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-[1.1]">
+            Your Journey to{" "}
+            <span className="text-gold">Healing</span>{" "}
+            Starts Here
+          </h1>
 
-            <div className="relative rounded-[32px] overflow-hidden elevated-card">
-              <Image
-                src="/assets/misc/building.jpg"
-                alt="New Horizons Center for Healing - A welcoming space for your healing journey"
-                width={600}
-                height={700}
-                className="object-cover w-full h-[600px]"
-                priority
-              />
-              {/* Sophisticated gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-forest/40 via-forest/5 to-transparent" />
+          {/* Subheadline */}
+          <p className="text-white/90 text-xl md:text-2xl leading-relaxed mb-8 max-w-2xl">
+            For fifteen years, New Horizons has been a place of hope and renewal—offering
+            compassionate, evidence-based mental health care that honors your unique path.
+          </p>
 
-              {/* Organic accent shape overlay */}
-              <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-gold/20 rounded-[45% 55% 60% 40%] blur-2xl" />
+          {/* Secondary text */}
+          <p className="text-white/70 text-lg mb-10 max-w-xl">
+            We believe healing happens through connection, trust, and the courage to take
+            the first step. We&apos;re here to walk alongside you.
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 mb-16">
+            <Button href="https://www.zocdoc.com" external size="lg" className="!bg-gold !text-primary-dark hover:!bg-gold-light !border-gold">
+              Schedule Your First Session
+            </Button>
+            <Button href="/services" variant="outline" size="lg" className="!border-white !text-white hover:!bg-white hover:!text-primary-dark">
+              Explore Our Services
+            </Button>
+          </div>
+
+          {/* Trust indicators */}
+          <div className="flex flex-wrap gap-8 md:gap-12 pt-8 border-t border-white/20">
+            <div>
+              <p className="text-gold font-bold text-4xl mb-1">25+</p>
+              <p className="text-white/70 text-sm">Licensed Clinicians</p>
             </div>
-
-            {/* Floating anniversary badge - more sophisticated */}
-            <div className="absolute -bottom-8 -left-8 bg-white rounded-2xl elevated-card p-6 max-w-[200px]">
-              <div className="flex items-baseline gap-2 mb-2">
-                <p className="text-forest font-bold text-5xl leading-none">15</p>
-                <p className="text-gold font-semibold text-xl">Years</p>
-              </div>
-              <div className="h-1 w-16 bg-gradient-to-r from-gold to-gold/20 rounded-full mb-2" />
-              <p className="text-warmgray text-sm font-medium">Serving North Texas</p>
-              <p className="text-warmgray/60 text-xs mt-1">2011 - 2026</p>
+            <div>
+              <p className="text-gold font-bold text-4xl mb-1">6</p>
+              <p className="text-white/70 text-sm">Insurance Networks</p>
+            </div>
+            <div>
+              <p className="text-gold font-bold text-4xl mb-1">1000s</p>
+              <p className="text-white/70 text-sm">Lives Transformed</p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Curved section divider for smooth transition */}
-      <div className="curved-divider">
-        <svg viewBox="0 0 1200 80" fill="none" preserveAspectRatio="none">
-          <path d="M0 80 L0 40 Q 300 0, 600 40 T 1200 40 L1200 80 Z" fill="currentColor" className="text-forest"/>
-        </svg>
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/60">
+        <span className="text-xs uppercase tracking-widest">Scroll to explore</span>
+        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center pt-2">
+          <div className="w-1.5 h-3 bg-white/60 rounded-full animate-bounce" />
+        </div>
       </div>
     </section>
   );

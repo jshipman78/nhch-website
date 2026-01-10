@@ -15,13 +15,13 @@ interface ButtonProps {
 
 const variants = {
   primary:
-    "bg-gold hover:bg-gold-dark text-forest shadow-md hover:shadow-xl font-bold relative overflow-hidden group",
+    "bg-primary hover:bg-primary-dark text-white shadow-md hover:shadow-xl font-bold relative overflow-hidden group",
   secondary:
-    "bg-forest hover:bg-forest-dark text-white shadow-md hover:shadow-xl relative overflow-hidden group",
+    "bg-gold hover:bg-gold-dark text-primary-dark shadow-md hover:shadow-xl relative overflow-hidden group",
   ghost:
-    "bg-transparent hover:bg-muted text-forest",
+    "bg-transparent hover:bg-muted text-primary",
   outline:
-    "bg-transparent border-2 border-forest text-forest hover:bg-forest hover:text-white shadow-sm hover:shadow-lg relative overflow-hidden group",
+    "bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white shadow-sm hover:shadow-lg relative overflow-hidden group",
 };
 
 const sizes = {

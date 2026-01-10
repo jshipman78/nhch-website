@@ -1,7 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  /* Brand Colors */
+  /* Brand Colors - Sky Blue Primary, Forest Green Accent */
+  --primary: #4A9BD9;
+  --primary-dark: #3A7FB8;
+  --primary-light: #6BB0E3;
+  --primary-lighter: #E8F4FC;
   --forest: #1B7340;
   --forest-dark: #155a33;
   --forest-light: #2a8f52;
@@ -13,7 +17,7 @@
   --sky: #4A9BD9;
   --sky-light: #6bb0e3;
   --sunrise: #F9C74F;
-  --warmgray: #6B6B6B;
+  --warmgray: #5A5A5A;
 
   /* Base Colors */
   --background: #ffffff;
@@ -30,6 +34,10 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-light: var(--primary-light);
+  --color-primary-lighter: var(--primary-lighter);
   --color-forest: var(--forest);
   --color-forest-dark: var(--forest-dark);
   --color-forest-light: var(--forest-light);
@@ -65,7 +73,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   line-height: 1.15;
   letter-spacing: -0.03em;
-  color: var(--forest);
+  color: var(--primary-dark);
 }
 
 h1 {
