@@ -54,8 +54,8 @@ export default function SignsTimeTherapyArticle() {
 
       {/* Article Content */}
       <Section background="white" padding="lg">
-        <article className="max-w-3xl mx-auto prose prose-lg prose-forest">
-          <p className="lead text-xl text-warmgray">
+        <article className="max-w-3xl mx-auto prose">
+          <p className="lead">
             As licensed professional counselors, one of the most common questions we hear is:
             &quot;How do I know if I really need therapy?&quot; The truth is, you don&apos;t need to
             be in crisis to benefit from professional support. Therapy is for anyone who wants

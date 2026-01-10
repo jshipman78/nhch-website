@@ -54,8 +54,8 @@ export default function NavigatingGriefArticle() {
 
       {/* Article Content */}
       <Section background="white" padding="lg">
-        <article className="max-w-3xl mx-auto prose prose-lg prose-forest">
-          <p className="lead text-xl text-warmgray">
+        <article className="max-w-3xl mx-auto prose">
+          <p className="lead">
             Grief is one of the most universal human experiences, yet it can feel
             profoundly isolating. If you&apos;re reading this, you may be in the midst
             of loss—or perhaps you&apos;re trying to understand why grief from long ago

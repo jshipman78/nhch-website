@@ -54,8 +54,8 @@ export default function WorkLifeBalanceArticle() {
 
       {/* Article Content */}
       <Section background="white" padding="lg">
-        <article className="max-w-3xl mx-auto prose prose-lg prose-forest">
-          <p className="lead text-xl text-warmgray">
+        <article className="max-w-3xl mx-auto prose">
+          <p className="lead">
             In our always-connected world, the line between work and personal life
             has blurred—and for many people, it&apos;s nearly disappeared. We answer emails
             at dinner, take calls on vacation, and measure our worth by our productivity.

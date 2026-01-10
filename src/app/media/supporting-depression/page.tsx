@@ -54,8 +54,8 @@ export default function SupportingDepressionArticle() {
 
       {/* Article Content */}
       <Section background="white" padding="lg">
-        <article className="max-w-3xl mx-auto prose prose-lg prose-forest">
-          <p className="lead text-xl text-warmgray">
+        <article className="max-w-3xl mx-auto prose">
+          <p className="lead">
             Watching someone you love struggle with depression can feel helpless and
             heartbreaking. You want to fix it, to take their pain away, to see them
             smile again. While you can&apos;t cure their depression, your support plays

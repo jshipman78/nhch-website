@@ -438,3 +438,268 @@ html {
 .animate-fade-in-up {
   animation: fade-in-up 0.6s ease-out forwards;
 }
+
+/* ============================================
+   PROSE / ARTICLE TYPOGRAPHY
+   Proper styling for long-form content
+   ============================================ */
+
+.prose {
+  max-width: 65ch;
+  color: var(--warmgray);
+  font-size: 1.0625rem;
+  line-height: 1.8;
+}
+
+.prose > * + * {
+  margin-top: 1.5em;
+}
+
+/* Prose headings - much smaller than page headings */
+.prose h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--forest-dark);
+  margin-top: 2.5em;
+  margin-bottom: 0.75em;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.prose h2 {
+  font-size: 1.375rem;
+  font-weight: 600;
+  color: var(--forest-dark);
+  margin-top: 2em;
+  margin-bottom: 0.75em;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+  padding-top: 1em;
+  border-top: 1px solid var(--border-light);
+}
+
+.prose h2:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.prose h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--forest-dark);
+  margin-top: 1.75em;
+  margin-bottom: 0.5em;
+  line-height: 1.4;
+}
+
+.prose h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--forest-dark);
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+/* Prose paragraphs */
+.prose p {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+  color: var(--warmgray);
+}
+
+.prose p:first-child {
+  margin-top: 0;
+}
+
+.prose .lead,
+.prose p.lead {
+  font-size: 1.1875rem;
+  line-height: 1.7;
+  color: var(--warmgray);
+  margin-bottom: 1.5em;
+}
+
+/* Prose lists - with proper bullets */
+.prose ul {
+  list-style-type: disc;
+  padding-left: 1.625em;
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+.prose ol {
+  list-style-type: decimal;
+  padding-left: 1.625em;
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+.prose li {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding-left: 0.375em;
+  color: var(--warmgray);
+}
+
+.prose li::marker {
+  color: var(--gold);
+}
+
+.prose ul ul,
+.prose ol ol,
+.prose ul ol,
+.prose ol ul {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+/* Prose emphasis */
+.prose strong {
+  font-weight: 600;
+  color: var(--forest-dark);
+}
+
+.prose em {
+  font-style: italic;
+}
+
+/* Prose links */
+.prose a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease;
+}
+
+.prose a:hover {
+  color: var(--primary-dark);
+}
+
+/* Prose blockquotes */
+.prose blockquote {
+  border-left: 4px solid var(--gold);
+  padding-left: 1.5em;
+  margin: 1.5em 0;
+  font-style: italic;
+  color: var(--warmgray-light);
+}
+
+.prose blockquote p {
+  color: inherit;
+}
+
+/* Prose code */
+.prose code {
+  font-size: 0.875em;
+  background-color: var(--muted);
+  padding: 0.2em 0.4em;
+  border-radius: 0.25rem;
+  font-family: ui-monospace, monospace;
+}
+
+.prose pre {
+  background-color: var(--coolgray);
+  color: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin: 1.5em 0;
+}
+
+.prose pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+}
+
+/* Prose images */
+.prose img {
+  border-radius: 0.5rem;
+  margin: 2em 0;
+}
+
+.prose figure {
+  margin: 2em 0;
+}
+
+.prose figcaption {
+  font-size: 0.875rem;
+  color: var(--warmgray-lighter);
+  text-align: center;
+  margin-top: 0.75em;
+}
+
+/* Prose horizontal rules */
+.prose hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2.5em 0;
+}
+
+/* Prose tables */
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+}
+
+.prose th,
+.prose td {
+  border: 1px solid var(--border);
+  padding: 0.75em 1em;
+  text-align: left;
+}
+
+.prose th {
+  background-color: var(--muted);
+  font-weight: 600;
+  color: var(--forest-dark);
+}
+
+/* Prose size variants */
+.prose-sm {
+  font-size: 0.9375rem;
+}
+
+.prose-lg {
+  font-size: 1.125rem;
+}
+
+/* Responsive prose adjustments */
+@media (min-width: 768px) {
+  .prose {
+    font-size: 1.125rem;
+  }
+
+  .prose h1 {
+    font-size: 2rem;
+  }
+
+  .prose h2 {
+    font-size: 1.5rem;
+  }
+
+  .prose h3 {
+    font-size: 1.25rem;
+  }
+
+  .prose .lead,
+  .prose p.lead {
+    font-size: 1.25rem;
+  }
+}
+
+/* ============================================
+   GENERAL LIST STYLING
+   Ensures lists have bullets outside of prose
+   ============================================ */
+
+@layer base {
+  ul:not(.prose ul) {
+    list-style: none;
+  }
+
+  ol:not(.prose ol) {
+    list-style: none;
+  }
+}
