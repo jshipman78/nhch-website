@@ -14,46 +14,47 @@ const insuranceLogos = [
 export default function InsuranceSection() {
   return (
     <Section background="white" padding="lg">
-      <div className="text-center mb-12">
-        <span className="text-primary text-sm font-semibold uppercase tracking-wider">
+      <div className="text-center mb-16">
+        <span className="text-eyebrow !text-primary">
           Insurance Accepted
         </span>
-        <h2 className="mt-3 mb-4">Making Care Accessible</h2>
-        <p className="text-warmgray max-w-2xl mx-auto">
+        <h2 className="mt-4 mb-5">Making Care Accessible</h2>
+        <p className="text-lead text-warmgray max-w-2xl mx-auto">
           We work with most major insurance providers to ensure quality mental health care is within reach.
         </p>
       </div>
 
-      {/* Insurance logos - larger, more readable */}
-      <div className="flex flex-wrap justify-center items-center gap-4 lg:gap-6 mb-12">
+      {/* Insurance logos - Premium presentation with enhanced readability */}
+      <div className="flex flex-wrap justify-center items-center gap-5 lg:gap-8 mb-16">
         {insuranceLogos.map((logo) => (
           <div
             key={logo.name}
-            className="bg-white border border-border rounded-md px-3 py-2 hover:shadow-md hover:border-primary/30 transition-all duration-300"
+            className="bg-white border-2 border-border-light rounded-2xl px-8 py-5 hover:shadow-xl hover:border-primary/20 transition-all duration-300 min-w-[160px] flex items-center justify-center"
           >
             <Image
               src={`/assets/insurance/${logo.file}`}
               alt={logo.name}
-              width={180}
-              height={72}
-              className="object-contain h-14 w-auto"
+              width={200}
+              height={80}
+              className="object-contain h-16 w-auto"
+              quality={95}
             />
           </div>
         ))}
       </div>
 
-      {/* Verification CTA */}
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8 border-t border-border">
-        <p className="text-warmgray text-center sm:text-left">
+      {/* Verification CTA - Enhanced design */}
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-10 border-t border-border">
+        <p className="text-warmgray text-center sm:text-left font-medium">
           Don&apos;t see your insurance? Coverage varies by provider.
         </p>
         <Link
           href="/contact"
-          className="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary-dark transition-colors group"
+          className="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary-dark transition-colors group px-6 py-3 rounded-full border-2 border-primary hover:bg-primary hover:text-white min-h-[48px]"
         >
           Verify Your Coverage
-          <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
           </svg>
         </Link>
       </div>

@@ -6,7 +6,7 @@ import { BookingButton } from "@/components/booking";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden pt-20">
+    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-24 md:pt-28">
       {/* Full-bleed background image */}
       <div className="absolute inset-0">
         <Image
@@ -15,76 +15,76 @@ export default function Hero() {
           fill
           className="object-cover object-center"
           priority
-          quality={90}
+          quality={92}
         />
-        {/* Sophisticated gradient overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
+        {/* Premium gradient overlay for optimal text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-black/25" />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+      {/* Content - Enhanced spacing and typography */}
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-32">
         <div className="max-w-3xl">
-          {/* Anniversary badge */}
-          <div className="inline-flex items-center gap-3 mb-8 px-5 py-2.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-full">
-            <div className="w-2 h-2 bg-gold rounded-full animate-pulse" />
-            <p className="text-white/90 font-medium text-sm tracking-wider uppercase">
+          {/* Anniversary badge - Refined design */}
+          <div className="inline-flex items-center gap-3 mb-8 px-6 py-3 bg-white/10 backdrop-blur-md border border-white/25 rounded-full shadow-lg">
+            <div className="w-2 h-2 bg-gold-light rounded-full animate-pulse shadow-gold" />
+            <p className="text-white/95 font-semibold text-sm tracking-widest uppercase">
               15 Years of Trusted Care
             </p>
           </div>
 
-          {/* Headline */}
-          <h1 className="!text-white text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-[1.1]">
+          {/* Headline - Premium typography */}
+          <h1 className="!text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 leading-[1.1] tracking-tight">
             Your Journey to{" "}
-            <span className="text-gold">Healing</span>{" "}
+            <span className="text-gold-light">Healing</span>{" "}
             Starts Here
           </h1>
 
-          {/* Subheadline */}
-          <p className="text-white/90 text-xl md:text-2xl leading-relaxed mb-8 max-w-2xl">
+          {/* Subheadline - Enhanced readability */}
+          <p className="text-white/95 text-lg sm:text-xl md:text-2xl leading-relaxed mb-8 max-w-2xl font-light">
             For fifteen years, New Horizons has been a place of hope and renewal—offering
             compassionate, evidence-based mental health care that honors your unique path.
           </p>
 
-          {/* Secondary text */}
-          <p className="text-white/70 text-lg mb-10 max-w-xl">
+          {/* Secondary text - Better contrast */}
+          <p className="text-white/80 text-base sm:text-lg mb-10 max-w-xl leading-relaxed">
             We believe healing happens through connection, trust, and the courage to take
             the first step. We&apos;re here to walk alongside you.
           </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-16">
+          {/* CTA Buttons - Enhanced mobile responsiveness */}
+          <div className="flex flex-col sm:flex-row gap-4 mb-12 sm:mb-16">
             <BookingButton variant="gold" size="lg">
               Schedule Your First Session
             </BookingButton>
-            <Button href="/services" variant="outline" size="lg" className="!border-white !text-white hover:!bg-white hover:!text-primary-dark">
+            <Button href="/services" variant="outline" size="lg" className="!border-2 !border-white !text-white hover:!bg-white hover:!text-forest-dark !font-semibold">
               Explore Our Services
             </Button>
           </div>
 
-          {/* Trust indicators */}
-          <div className="flex flex-wrap gap-8 md:gap-12 pt-8 border-t border-white/20">
-            <div>
-              <p className="text-gold font-bold text-4xl mb-1">25+</p>
-              <p className="text-white/70 text-sm">Licensed Clinicians</p>
+          {/* Trust indicators - Premium styling with better mobile layout */}
+          <div className="flex flex-wrap gap-6 sm:gap-8 md:gap-12 pt-8 border-t border-white/25">
+            <div className="min-w-[100px]">
+              <p className="text-gold-light font-bold text-3xl sm:text-4xl mb-2 font-serif">25+</p>
+              <p className="text-white/80 text-xs sm:text-sm font-medium tracking-wide">Licensed Clinicians</p>
             </div>
-            <div>
-              <p className="text-gold font-bold text-4xl mb-1">6</p>
-              <p className="text-white/70 text-sm">Insurance Networks</p>
+            <div className="min-w-[100px]">
+              <p className="text-gold-light font-bold text-3xl sm:text-4xl mb-2 font-serif">6</p>
+              <p className="text-white/80 text-xs sm:text-sm font-medium tracking-wide">Insurance Networks</p>
             </div>
-            <div>
-              <p className="text-gold font-bold text-4xl mb-1">1000s</p>
-              <p className="text-white/70 text-sm">Lives Transformed</p>
+            <div className="min-w-[100px]">
+              <p className="text-gold-light font-bold text-3xl sm:text-4xl mb-2 font-serif">1000s</p>
+              <p className="text-white/80 text-xs sm:text-sm font-medium tracking-wide">Lives Transformed</p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/60">
-        <span className="text-xs uppercase tracking-widest">Scroll to explore</span>
-        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center pt-2">
-          <div className="w-1.5 h-3 bg-white/60 rounded-full animate-bounce" />
+      {/* Scroll indicator - Refined design */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-white/70">
+        <span className="text-xs uppercase tracking-widest font-medium">Scroll to explore</span>
+        <div className="w-6 h-10 border-2 border-white/40 rounded-full flex justify-center pt-2">
+          <div className="w-1.5 h-3 bg-white/70 rounded-full animate-bounce" />
         </div>
       </div>
     </section>

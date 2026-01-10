@@ -56,39 +56,40 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-forest text-white relative overflow-hidden">
-      {/* Organic background accents */}
-      <div className="absolute inset-0 overflow-hidden opacity-5">
+    <footer className="bg-forest-dark text-white relative overflow-hidden">
+      {/* Organic background accents - enhanced opacity */}
+      <div className="absolute inset-0 overflow-hidden opacity-[0.07]">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gold rounded-full blur-[100px]" />
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-sky rounded-full blur-[120px]" />
       </div>
 
       {/* Main Footer Content */}
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-          {/* Logo & Tagline */}
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+          {/* Logo & Tagline - Enhanced readability */}
           <div className="lg:col-span-1">
-            <div className="bg-white/95 rounded-lg p-3 inline-block mb-4">
+            <div className="bg-white rounded-xl p-4 inline-block mb-6 shadow-lg">
               <Image
                 src="/assets/logos/NHCH_15YR_LOGO.png"
                 alt="New Horizons Center for Healing"
-                width={180}
-                height={90}
-                className="h-14 w-auto"
+                width={200}
+                height={100}
+                className="h-16 w-auto"
+                quality={95}
               />
             </div>
-            <p className="text-white/90 text-base leading-relaxed">
+            <p className="text-white/90 text-base leading-relaxed mb-6">
               15 years of trusted, ethical mental health care for individuals, couples, and families.
             </p>
-            {/* Social Links */}
-            <div className="flex gap-4 mt-6">
+            {/* Social Links - Enhanced touch targets */}
+            <div className="flex gap-3">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white/70 hover:text-gold transition-colors"
+                  className="text-white/70 hover:text-gold-light transition-colors p-2 hover:bg-white/10 rounded-lg min-w-[40px] min-h-[40px] flex items-center justify-center"
                   aria-label={social.name}
                 >
                   {social.icon}
@@ -97,9 +98,9 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Quick Links - Enhanced typography */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-gold mb-4">
+            <h3 className="text-eyebrow !text-gold-light mb-5">
               Quick Links
             </h3>
             <ul className="space-y-3">
@@ -107,7 +108,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-white/80 hover:text-white transition-colors text-sm"
+                    className="text-white/85 hover:text-white transition-colors text-sm font-medium inline-flex items-center gap-2 py-1"
                   >
                     {link.name}
                   </Link>
@@ -116,9 +117,9 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Services - Enhanced typography */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-gold mb-4">
+            <h3 className="text-eyebrow !text-gold-light mb-5">
               Services
             </h3>
             <ul className="space-y-3">
@@ -126,71 +127,76 @@ export default function Footer() {
                 <li key={service.name}>
                   <Link
                     href={service.href}
-                    className="text-white/80 hover:text-white transition-colors text-sm"
+                    className="text-white/85 hover:text-white transition-colors text-sm font-medium inline-flex items-center gap-2 py-1"
                   >
                     {service.name}
                   </Link>
                 </li>
               ))}
-              <li>
+              <li className="pt-2">
                 <Link
                   href="/services"
-                  className="text-gold hover:text-gold-light transition-colors text-sm font-medium"
+                  className="text-gold-light hover:text-gold transition-colors text-sm font-semibold inline-flex items-center gap-2"
                 >
-                  View All Services &rarr;
+                  View All Services
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Contact Info - Enhanced typography and spacing */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-gold mb-4">
+            <h3 className="text-eyebrow !text-gold-light mb-5">
               Contact Us
             </h3>
-            <address className="not-italic text-sm text-white/80 space-y-3">
-              <p>
+            <address className="not-italic text-sm text-white/85 space-y-4">
+              <p className="leading-relaxed">
                 4817 Medical Center Dr. Unit 3A
                 <br />
                 McKinney, TX 75069
               </p>
               <p>
-                <a href="tel:+19726079650" className="hover:text-white transition-colors">
+                <a href="tel:+19726079650" className="hover:text-white transition-colors font-medium inline-flex items-center gap-2 min-h-[40px]">
                   Phone: (972) 607-9650
                 </a>
               </p>
               <p>
-                <a href="sms:+14696348518" className="hover:text-white transition-colors">
+                <a href="sms:+14696348518" className="hover:text-white transition-colors font-medium inline-flex items-center gap-2 min-h-[40px]">
                   Text: (469) 634-8518
                 </a>
               </p>
-              <p>Fax: (469) 519-0423</p>
+              <p className="text-white/75">Fax: (469) 519-0423</p>
             </address>
-            <div className="mt-4">
-              <p className="text-sm text-white/80">
-                <span className="font-medium">Hours:</span> Mon-Thu 9am-8pm, Fri 9am-6pm
+            <div className="mt-5 pt-4 border-t border-white/10">
+              <p className="text-sm text-white/85 leading-relaxed">
+                <span className="font-semibold text-gold-light">Hours:</span><br className="sm:hidden" />
+                <span className="sm:ml-2">Mon-Thu 9am-8pm, Fri 9am-6pm</span>
               </p>
             </div>
           </div>
         </div>
 
-        {/* Insurance Section - Enhanced */}
-        <div className="mt-12 pt-8 border-t border-white/10">
-          <p className="text-center text-base text-white/80 mb-6">
-            In-network with major insurance providers:
+        {/* Insurance Section - Premium presentation with enhanced readability */}
+        <div className="mt-16 pt-10 border-t border-white/15">
+          <p className="text-center text-base font-medium text-white/90 mb-8 tracking-wide">
+            In-network with major insurance providers
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-3 lg:gap-4">
+          <div className="flex flex-wrap justify-center items-center gap-4 lg:gap-6">
             {insuranceLogos.map((insurance) => (
               <div
                 key={insurance.name}
-                className="bg-white rounded px-2 py-1.5 flex items-center justify-center"
+                className="bg-white rounded-xl px-6 py-4 flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow duration-300 min-w-[140px]"
               >
                 <Image
                   src={`/assets/insurance/${insurance.file}`}
                   alt={insurance.name}
-                  width={160}
-                  height={64}
-                  className="h-12 w-auto object-contain"
+                  width={180}
+                  height={72}
+                  className="h-14 w-auto object-contain"
+                  quality={90}
                 />
               </div>
             ))}
@@ -198,23 +204,23 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom Bar */}
-      <div className="bg-forest-dark">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
+      {/* Bottom Bar - Enhanced contrast */}
+      <div className="bg-black/20 backdrop-blur-sm">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-white/60">
+            <p className="text-sm text-white/70 font-medium">
               &copy; {new Date().getFullYear()} New Horizons Center for Healing. All rights reserved.
             </p>
-            <div className="flex gap-6">
+            <div className="flex gap-8">
               <Link
                 href="/privacy-policy"
-                className="text-sm text-white/60 hover:text-white transition-colors"
+                className="text-sm text-white/70 hover:text-white transition-colors font-medium min-h-[40px] inline-flex items-center"
               >
                 Privacy Policy
               </Link>
               <Link
                 href="/terms-of-service"
-                className="text-sm text-white/60 hover:text-white transition-colors"
+                className="text-sm text-white/70 hover:text-white transition-colors font-medium min-h-[40px] inline-flex items-center"
               >
                 Terms of Service
               </Link>

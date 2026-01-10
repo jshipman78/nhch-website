@@ -1,39 +1,52 @@
 @import "tailwindcss";
 
 :root {
-  /* Brand Colors - Sky Blue Primary, Forest Green Accent */
-  --primary: #4A9BD9;
-  --primary-dark: #3A7FB8;
-  --primary-light: #6BB0E3;
-  --primary-lighter: #E8F4FC;
+  /* Premium Brand Colors - Refined for luxury and trust */
+  --primary: #1B5F8C;
+  --primary-dark: #154A6D;
+  --primary-light: #2C7AAF;
+  --primary-lighter: #E6F1F7;
   --forest: #1B7340;
-  --forest-dark: #155a33;
-  --forest-light: #2a8f52;
-  --gold: #F4C430;
-  --gold-warm: #E5B342;
-  --gold-rich: #D4A853;
-  --gold-dark: #d4a028;
-  --gold-light: #f7d563;
+  --forest-dark: #134426;
+  --forest-light: #2A945B;
+  --forest-lighter: #E6F4ED;
+  --gold: #D4A853;
+  --gold-warm: #C19544;
+  --gold-rich: #B88A3E;
+  --gold-dark: #A07935;
+  --gold-light: #E4C378;
+  --gold-lighter: #F7F0E3;
   --sky: #4A9BD9;
-  --sky-light: #6bb0e3;
+  --sky-light: #6BB0E3;
+  --sky-lighter: #E8F4FC;
   --sunrise: #F9C74F;
-  --warmgray: #5A5A5A;
 
-  /* Base Colors */
-  --background: #ffffff;
-  --foreground: #1a1a1a;
-  --muted: #f5f5f5;
-  --border: #e5e5e5;
+  /* Sophisticated neutrals */
+  --warmgray: #4A4A4A;
+  --warmgray-light: #6B6B6B;
+  --warmgray-lighter: #9A9A9A;
+  --coolgray: #3A3F47;
 
-  /* Warm neutral tones for depth */
+  /* Base Colors - Enhanced for premium feel */
+  --background: #FFFFFF;
+  --foreground: #1A1A1A;
+  --foreground-secondary: #3A3A3A;
+  --muted: #F8F8F8;
+  --muted-dark: #F0F0F0;
+  --border: #E0E0E0;
+  --border-light: #EBEBEB;
+
+  /* Warm neutral tones for depth and sophistication */
   --warm-cream: #FAF8F5;
   --warm-sand: #F5F1EB;
   --soft-sage: #E8F0ED;
+  --warm-white: #FDFCFB;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-foreground-secondary: var(--foreground-secondary);
   --color-primary: var(--primary);
   --color-primary-dark: var(--primary-dark);
   --color-primary-light: var(--primary-light);
@@ -41,94 +54,195 @@
   --color-forest: var(--forest);
   --color-forest-dark: var(--forest-dark);
   --color-forest-light: var(--forest-light);
+  --color-forest-lighter: var(--forest-lighter);
   --color-gold: var(--gold);
   --color-gold-warm: var(--gold-warm);
   --color-gold-rich: var(--gold-rich);
   --color-gold-dark: var(--gold-dark);
   --color-gold-light: var(--gold-light);
+  --color-gold-lighter: var(--gold-lighter);
   --color-sky: var(--sky);
   --color-sky-light: var(--sky-light);
+  --color-sky-lighter: var(--sky-lighter);
   --color-sunrise: var(--sunrise);
   --color-warmgray: var(--warmgray);
+  --color-warmgray-light: var(--warmgray-light);
+  --color-warmgray-lighter: var(--warmgray-lighter);
+  --color-coolgray: var(--coolgray);
   --color-muted: var(--muted);
+  --color-muted-dark: var(--muted-dark);
   --color-border: var(--border);
+  --color-border-light: var(--border-light);
   --color-warm-cream: var(--warm-cream);
   --color-warm-sand: var(--warm-sand);
   --color-soft-sage: var(--soft-sage);
+  --color-warm-white: var(--warm-white);
   --font-serif: var(--font-playfair);
   --font-sans: var(--font-inter);
 }
 
-/* Base Styles */
+/* Base Styles - Premium Typography Foundation */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), system-ui, sans-serif;
-  line-height: 1.6;
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  line-height: 1.65;
+  letter-spacing: -0.011em;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
-/* Typography - Enhanced hierarchy and expressiveness */
+/* Typography - Luxurious hierarchy with refined spacing */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-serif), Georgia, serif;
   font-weight: 600;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
-  /* Note: color set via utility classes to allow overrides like text-white */
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: var(--forest-dark);
+  font-feature-settings: "kern" 1, "liga" 1;
+  /* Note: color can be overridden via utility classes like text-white */
 }
 
 h1 {
-  font-size: 2.75rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
 }
 
 h2 {
-  font-size: 2.25rem;
+  font-size: 2rem;
   font-weight: 600;
+  letter-spacing: -0.028em;
+  line-height: 1.25;
 }
 
 h3 {
-  font-size: 1.625rem;
+  font-size: 1.5rem;
   font-weight: 600;
+  letter-spacing: -0.022em;
+  line-height: 1.3;
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.018em;
+  line-height: 1.35;
+}
+
+h5 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.4;
+}
+
+h6 {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.012em;
+  line-height: 1.45;
 }
 
 p {
   line-height: 1.75;
+  letter-spacing: -0.011em;
+  color: var(--foreground-secondary);
 }
 
 /* Large display text for emotional impact */
 .text-display {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.045em;
 }
 
+/* Premium text styles */
+.text-lead {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  letter-spacing: -0.015em;
+  color: var(--foreground-secondary);
+}
+
+.text-body {
+  font-size: 1rem;
+  line-height: 1.75;
+  letter-spacing: -0.011em;
+}
+
+.text-small {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  letter-spacing: -0.008em;
+}
+
+/* Uppercase headings for sections */
+.text-eyebrow {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+}
+
 @media (min-width: 768px) {
   h1 {
-    font-size: 4rem;
+    font-size: 3.5rem;
+    letter-spacing: -0.038em;
   }
 
   h2 {
-    font-size: 3rem;
+    font-size: 2.75rem;
+    letter-spacing: -0.032em;
   }
 
   h3 {
-    font-size: 2rem;
+    font-size: 1.875rem;
+    letter-spacing: -0.025em;
+  }
+
+  h4 {
+    font-size: 1.5rem;
   }
 
   .text-display {
-    font-size: 5.5rem;
+    font-size: 4.5rem;
+    letter-spacing: -0.048em;
+  }
+
+  .text-lead {
+    font-size: 1.375rem;
   }
 }
 
 @media (min-width: 1024px) {
   h1 {
-    font-size: 4.5rem;
+    font-size: 4.25rem;
+    letter-spacing: -0.042em;
+  }
+
+  h2 {
+    font-size: 3.25rem;
+    letter-spacing: -0.035em;
+  }
+
+  h3 {
+    font-size: 2.125rem;
   }
 
   .text-display {
-    font-size: 6.5rem;
+    font-size: 5.5rem;
+    letter-spacing: -0.052em;
+  }
+
+  .text-lead {
+    font-size: 1.5rem;
   }
 }
 
@@ -215,21 +329,45 @@ html {
   opacity: 0.6;
 }
 
-/* Elevated card with sophisticated shadow */
+/* Premium spacing system - 8px base unit for consistent rhythm */
+.space-section-sm { padding-top: 3rem; padding-bottom: 3rem; }
+.space-section-md { padding-top: 4rem; padding-bottom: 4rem; }
+.space-section-lg { padding-top: 5rem; padding-bottom: 5rem; }
+.space-section-xl { padding-top: 6rem; padding-bottom: 6rem; }
+
+@media (min-width: 768px) {
+  .space-section-sm { padding-top: 4rem; padding-bottom: 4rem; }
+  .space-section-md { padding-top: 5rem; padding-bottom: 5rem; }
+  .space-section-lg { padding-top: 7rem; padding-bottom: 7rem; }
+  .space-section-xl { padding-top: 9rem; padding-bottom: 9rem; }
+}
+
+@media (min-width: 1024px) {
+  .space-section-sm { padding-top: 5rem; padding-bottom: 5rem; }
+  .space-section-md { padding-top: 7rem; padding-bottom: 7rem; }
+  .space-section-lg { padding-top: 10rem; padding-bottom: 10rem; }
+  .space-section-xl { padding-top: 12rem; padding-bottom: 12rem; }
+}
+
+/* Elevated card with sophisticated layered shadow */
 .elevated-card {
   box-shadow:
-    0 1px 3px 0 rgba(27, 115, 64, 0.05),
-    0 10px 15px -3px rgba(27, 115, 64, 0.08),
-    0 4px 6px -2px rgba(244, 196, 48, 0.05);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    0 1px 2px 0 rgba(27, 68, 70, 0.03),
+    0 2px 6px -1px rgba(27, 68, 70, 0.05),
+    0 8px 16px -4px rgba(27, 95, 140, 0.08),
+    0 16px 24px -8px rgba(212, 168, 83, 0.04);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--border-light);
 }
 
 .elevated-card:hover {
   box-shadow:
-    0 4px 6px -1px rgba(27, 115, 64, 0.08),
-    0 20px 25px -5px rgba(27, 115, 64, 0.12),
-    0 10px 10px -5px rgba(244, 196, 48, 0.08);
-  transform: translateY(-4px);
+    0 2px 4px 0 rgba(27, 68, 70, 0.04),
+    0 4px 8px -2px rgba(27, 68, 70, 0.06),
+    0 12px 24px -6px rgba(27, 95, 140, 0.12),
+    0 24px 40px -12px rgba(212, 168, 83, 0.08);
+  transform: translateY(-2px);
+  border-color: var(--primary-lighter);
 }
 
 /* Flowing accent line - signature element */
