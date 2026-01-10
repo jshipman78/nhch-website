@@ -38,7 +38,7 @@ function LeaderCard({
               alt={name}
               width={300}
               height={400}
-              className="w-full h-64 md:h-full object-cover"
+              className="w-full h-64 md:h-full object-cover object-[center_15%]"
             />
           ) : (
             <div className="w-full h-64 md:h-full min-h-[300px] bg-gradient-to-br from-forest to-forest-dark flex items-center justify-center">

@@ -25,7 +25,7 @@ export default function TeamMemberCard({
             src={member.photo}
             alt={member.name}
             fill
-            className={`object-cover object-[center_25%] ${
+            className={`object-cover object-[center_15%] ${
               isInactive ? "grayscale" : ""
             }`}
           />
@@ -84,7 +84,7 @@ export function AdminStaffCard({
     <div className="flex items-center gap-4 bg-white rounded-lg border border-border p-4">
       <div className="relative w-16 h-16 rounded-full overflow-hidden bg-muted flex-shrink-0">
         {photo ? (
-          <Image src={photo} alt={name} fill className="object-cover" />
+          <Image src={photo} alt={name} fill className="object-cover object-[center_15%]" />
         ) : (
           <div className="w-full h-full bg-gradient-to-br from-forest to-forest-dark flex items-center justify-center">
             <span className="text-lg font-bold text-white/80">{initials}</span>

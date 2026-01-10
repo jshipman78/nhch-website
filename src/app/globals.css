@@ -73,7 +73,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   line-height: 1.15;
   letter-spacing: -0.03em;
-  color: var(--primary-dark);
+  /* Note: color set via utility classes to allow overrides like text-white */
 }
 
 h1 {

@@ -68,14 +68,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Logo & Tagline */}
           <div className="lg:col-span-1">
-            <Image
-              src="/assets/logos/NHCH_15YR_LOGO.png"
-              alt="New Horizons Center for Healing"
-              width={220}
-              height={110}
-              className="h-18 w-auto brightness-0 invert mb-4"
-            />
-            <p className="text-white/90 text-sm leading-relaxed">
+            <div className="bg-white/95 rounded-lg p-3 inline-block mb-4">
+              <Image
+                src="/assets/logos/NHCH_15YR_LOGO.png"
+                alt="New Horizons Center for Healing"
+                width={180}
+                height={90}
+                className="h-14 w-auto"
+              />
+            </div>
+            <p className="text-white/90 text-base leading-relaxed">
               15 years of trusted, ethical mental health care for individuals, couples, and families.
             </p>
             {/* Social Links */}
@@ -174,21 +176,21 @@ export default function Footer() {
 
         {/* Insurance Section - Enhanced */}
         <div className="mt-12 pt-8 border-t border-white/10">
-          <p className="text-center text-sm text-white/70 mb-8">
-            Many of our providers are credentialed or in-network with the following insurance networks:
+          <p className="text-center text-base text-white/80 mb-8">
+            In-network with major insurance providers:
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-6 lg:gap-8">
+          <div className="flex flex-wrap justify-center items-center gap-4 lg:gap-6">
             {insuranceLogos.map((insurance) => (
               <div
                 key={insurance.name}
-                className="bg-white/95 rounded-xl p-3.5 h-14 flex items-center justify-center hover:bg-white transition-all duration-300 hover:scale-105 shadow-sm"
+                className="bg-white rounded-lg px-4 py-3 flex items-center justify-center shadow-sm"
               >
                 <Image
                   src={`/assets/insurance/${insurance.file}`}
                   alt={insurance.name}
-                  width={110}
-                  height={45}
-                  className="h-7 w-auto object-contain"
+                  width={140}
+                  height={56}
+                  className="h-10 w-auto object-contain"
                 />
               </div>
             ))}

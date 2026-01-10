@@ -46,16 +46,18 @@ export default function Header() {
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center transition-transform hover:scale-105">
-            <Image
-              src="/assets/logos/NHCH_15YR_LOGO.png"
-              alt="New Horizons Center for Healing"
-              width={200}
-              height={80}
-              className={`h-14 w-auto transition-all duration-300 ${
-                scrolled ? "" : "brightness-0 invert drop-shadow-lg"
-              }`}
-              priority
-            />
+            <div className={`px-3 py-1.5 rounded-lg transition-all duration-300 ${
+              scrolled ? "" : "bg-white/95 shadow-md"
+            }`}>
+              <Image
+                src="/assets/logos/NHCH_15YR_LOGO.png"
+                alt="New Horizons Center for Healing"
+                width={200}
+                height={80}
+                className="h-12 w-auto"
+                priority
+              />
+            </div>
           </Link>
 
           {/* Desktop Navigation */}

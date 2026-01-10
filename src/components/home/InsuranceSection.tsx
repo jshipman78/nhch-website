@@ -24,19 +24,19 @@ export default function InsuranceSection() {
         </p>
       </div>
 
-      {/* Insurance logos - clean, minimal design */}
-      <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 mb-12">
+      {/* Insurance logos - clean, readable design */}
+      <div className="flex flex-wrap justify-center items-center gap-6 lg:gap-10 mb-12">
         {insuranceLogos.map((logo) => (
           <div
             key={logo.name}
-            className="grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300"
+            className="bg-white border border-border rounded-lg px-5 py-4 hover:shadow-md hover:border-primary/30 transition-all duration-300"
           >
             <Image
               src={`/assets/insurance/${logo.file}`}
               alt={logo.name}
-              width={120}
-              height={50}
-              className="object-contain h-10 w-auto"
+              width={160}
+              height={64}
+              className="object-contain h-12 w-auto"
             />
           </div>
         ))}

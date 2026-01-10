@@ -29,7 +29,7 @@ const stats = [
 
 export default function TrustSignals() {
   return (
-    <Section background="primary" padding="lg" className="relative overflow-hidden">
+    <Section background="forest" padding="lg" className="relative overflow-hidden">
       {/* Organic background accent */}
       <div className="absolute inset-0 overflow-hidden opacity-10">
         <svg className="absolute top-0 left-1/4 w-96 h-96" viewBox="0 0 400 400" fill="none">
