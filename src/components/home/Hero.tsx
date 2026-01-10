@@ -6,7 +6,7 @@ import { BookingButton } from "@/components/booking";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-24 md:pt-28">
+    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden -mt-24">
       {/* Full-bleed background image */}
       <div className="absolute inset-0">
         <Image
@@ -23,7 +23,7 @@ export default function Hero() {
       </div>
 
       {/* Content - Enhanced spacing and typography */}
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-32">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-32 pb-16 sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-32">
         <div className="max-w-3xl">
           {/* Anniversary badge - Refined design */}
           <div className="inline-flex items-center gap-3 mb-8 px-6 py-3 bg-white/10 backdrop-blur-md border border-white/25 rounded-full shadow-lg">
