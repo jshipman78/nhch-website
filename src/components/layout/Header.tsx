@@ -30,15 +30,15 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center transition-transform hover:scale-105">
             <Image
               src="/assets/logos/NHCH_15YR_LOGO.png"
               alt="New Horizons Center for Healing"
-              width={180}
-              height={72}
-              className="h-11 w-auto"
+              width={240}
+              height={96}
+              className="h-16 w-auto"
               priority
             />
           </Link>
